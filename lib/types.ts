@@ -1,7 +1,9 @@
 import type { Context } from 'hono';
 
 // Make sure it's synchronise with scripts/workflow/data.ts
+// and lib/routes/rsshub/routes.ts
 type Category =
+    | 'popular'
     | 'social-media'
     | 'new-media'
     | 'traditional-media'
@@ -247,8 +249,8 @@ export type RadarItem = {
               /** The parameters matched from the `source` field */
               params: any,
               /** The current webpage URL string */
-              url?: string,
+              url: string,
               /** @deprecated Temporary removed  @see https://github.com/DIYgod/RSSHub-Radar/commit/e6079ea1a8c96e89b1b2c2aa6d13c7967788ca3b */
-              document?: Document
+              document: Document
           ) => string);
 };
